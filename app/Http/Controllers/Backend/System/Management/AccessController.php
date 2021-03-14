@@ -82,7 +82,7 @@ class AccessController extends Controller {
 
     $store = $request->all();
     $this->model::create($store);
-    return redirect($this->url)->with('success', trans('notification.success.create'));
+    return redirect($this->url)->with('success', trans('default.notification.success.item-created'));
   }
 
   /**
@@ -111,7 +111,7 @@ class AccessController extends Controller {
     $data = $this->model::findOrFail($id);
     $update = $request->all();
     $data->update($update);
-    return redirect($this->url)->with('success', trans('notification.success.edit'));
+    return redirect($this->url)->with('success', trans('default.notification.success.item-updated'));
   }
 
   /**
@@ -122,7 +122,7 @@ class AccessController extends Controller {
 
   public function destroy($id) {
     $this->model::destroy($id);
-    return redirect($this->url)->with('success', trans('notification.success.delete'));
+    return redirect($this->url)->with('success', trans('default.notification.success.item-deleted'));
   }
 
   /**
@@ -149,6 +149,7 @@ class AccessController extends Controller {
   **/
 
   public function delete($id) {
+    $this->model::destroy($id);
     $data = $this->model::where('id',$id)->delete();
     return Response::json($data);
   }
@@ -159,8 +160,7 @@ class AccessController extends Controller {
   **************************************************
   **/
 
-  public function deleteall(Request $request)
-  {
+  public function deleteall(Request $request) {
     $exilednoname = $request->EXILEDNONAME;
     $this->model::whereIn('id',explode(",",$exilednoname))->delete();
     return Response::json($exilednoname);

@@ -3,6 +3,11 @@
 use App\Access;
 use Spatie\Activitylog\Models\Activity;
 
+function Accesses() {
+  $items = Access::orderBy('name','asc')->pluck('name', 'id')->toArray();
+  return $items;
+}
+
 function activities($model) {
   $items = $activity = Activity::where('subject_type', $model)->orderBy('created_at', 'desc')->get();
   return $items;

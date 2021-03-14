@@ -8,6 +8,7 @@ use Redirect,Response;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\Activitylog\Models\Activity;
+use Illuminate\Support\Facades\Hash;
 
 Use App\User;
 
@@ -77,12 +78,21 @@ class UserController extends Controller {
 
   public function store(Request $request) {
     $validated = $request->validate([
-      'name' => 'required|unique:.'. $this->model . '|min:3',
+      'name' => 'required|unique:users|min:3',
     ]);
 
-    $store = $request->all();
-    $this->model::create($store);
-    return redirect($this->url)->with('success', trans('notification.success.create'));
+    $store = User::insert([
+      'id_access' => $request['id_access'],
+      'username' => $request['username'],
+      'name' => $request['name'],
+      'email' => $request['email'],
+      'phone' => $request['phone'],
+      'password' => Hash::make($request['password']),
+      'address_1' => $request['address_1'],
+      'address_2' => $request['address_2'],
+    ]);
+
+    return redirect($this->url)->with('success', trans('default.notification.success.item-created'));
   }
 
   /**
@@ -111,7 +121,7 @@ class UserController extends Controller {
     $data = $this->model::findOrFail($id);
     $update = $request->all();
     $data->update($update);
-    return redirect($this->url)->with('success', trans('notification.success.edit'));
+    return redirect($this->url)->with('success', trans('default.notification.success.item-updated'));
   }
 
   /**
@@ -126,7 +136,7 @@ class UserController extends Controller {
     }
     else {
       $this->model::destroy($id);
-      return redirect($this->url)->with('success', trans('notification.success.delete'));
+      return redirect($this->url)->with('success', trans('default.notification.success.item-deleted'));
     }
   }
 

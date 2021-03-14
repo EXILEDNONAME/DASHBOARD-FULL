@@ -4,11 +4,15 @@
 @push('content-head')
 <th> Access </th>
 <th> Name </th>
+<th> Username </th>
 <th> Email </th>
+<th> Phone </th>
 @endpush
 
 @push('content-body')
 { data: 'accesses.name' },
 { data: 'name' },
+{ data: 'username' },
 { data: 'email' },
+{ data: 'phone' },
 @endpush

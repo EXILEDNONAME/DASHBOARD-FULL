@@ -8,3 +8,4 @@ php artisan crud:generate DummyTables --fields='title#string; title_test#string;
 <br>
 
 - Create Email Forgot Password <br>
+- Create Management Users

@@ -56,6 +56,8 @@
 					</div>
 				</form>
 				<br>
+				<a href="/password/reset" style="text-decoration: none;"> <button class="btn btn-success btn-block btn-lg"> Forgot Password </button> </a>
+				<br>
 				<a href="/" style="text-decoration: none;"> <button class="btn btn-success btn-block btn-lg"> Back </button> </a>
 			</div>
 		</div>

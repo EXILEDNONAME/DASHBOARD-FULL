@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Notifications\ResetPasswordNotification;
 
 use Spatie\Activitylog\Traits\LogsActivity;
 
@@ -38,6 +39,10 @@ class User extends Authenticatable {
 
   public function accesses(){
     return $this->belongsTo(Access::class, 'id_access');
+  }
+  
+  public function sendPasswordResetNotification($token) {
+    $this->notify(new ResetPasswordNotification($token));
   }
 
 }

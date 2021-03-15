@@ -34,13 +34,15 @@
 							<h3 class="opacity-40 font-weight-normal">Forgotten Password ?</h3>
 							<p class="opacity-40">Enter your email to reset your password</p>
 						</div>
-						<form class="form">
+						<form method="POST" action="{{ route('password.email') }}">
+							@csrf
+
 							<div class="form-group mb-10">
 								<input class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8" type="text" placeholder="Email" name="email" autocomplete="off" />
 							</div>
 							<div class="form-group">
-								<button id="kt_login_forgot_submit" class="btn btn-pill btn-primary opacity-90 px-15 py-3 m-2">Request</button>
-								<button id="kt_login_forgot_cancel" class="btn btn-pill btn-outline-white opacity-70 px-15 py-3 m-2">Cancel</button>
+								<button type="submit" class="btn btn-pill btn-primary opacity-70 px-15 py-3 m-2">Request</button>
+								<a href="/login" class="btn btn-pill btn-outline-white opacity-70 px-15 py-3 m-2">Cancel</a>
 							</div>
 						</form>
 

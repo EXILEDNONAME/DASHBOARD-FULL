@@ -63,7 +63,7 @@
 
 							<div class="mt-10">
 								<span class="opacity-40 mr-4">Don't have an account yet?</span><br>
-								<u><a href="javascript:;" id="kt_login_signup" class="text-white opacity-30 font-weight-normal"> Register </a></u>
+								<u><a href="javascript:;" onclick="return alert('Not Available!')" id="kt_login_signup" class="text-white opacity-30 font-weight-normal"> Register </a></u>
 							</div>
 						</div>
 					</div>

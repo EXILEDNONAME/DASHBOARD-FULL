@@ -1,3 +1,48 @@
+<!-- <div class="container">
+<div class="row justify-content-center">
+<div class="col-md-8">
+<div class="card">
+<div class="card-header">{{ __('Reset Password') }}</div>
+
+<div class="card-body">
+@if (session('status'))
+<div class="alert alert-success" role="alert">
+{{ session('status') }}
+</div>
+@endif
+
+<form method="POST" action="{{ route('password.email') }}">
+@csrf
+
+<div class="form-group row">
+<label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+<div class="col-md-6">
+<input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+@error('email')
+<span class="invalid-feedback" role="alert">
+<strong>{{ $message }}</strong>
+</span>
+@enderror
+</div>
+</div>
+
+<div class="form-group row mb-0">
+<div class="col-md-6 offset-md-4">
+<button type="submit" class="btn btn-primary">
+{{ __('Send Password Reset Link') }}
+</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div> -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,21 +75,33 @@
 					</div>
 
 
-						<div class="mb-10">
-							<h3 class="opacity-40 font-weight-normal">Forgotten Password ?</h3>
-							<p class="opacity-40">Enter your email to reset your password</p>
-						</div>
-						<form method="POST" action="{{ route('password.email') }}">
-							@csrf
+					<div class="mb-10">
+						<h3 class="opacity-40 font-weight-normal">Forgotten Password ?</h3>
+						<p class="opacity-40">Enter your email to reset your password</p>
+					</div>
 
-							<div class="form-group mb-10">
-								<input class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8" type="text" placeholder="Email" name="email" autocomplete="off" />
-							</div>
-							<div class="form-group">
-								<button type="submit" class="btn btn-pill btn-primary opacity-70 px-15 py-3 m-2">Request</button>
-								<a href="/login" class="btn btn-pill btn-outline-white opacity-70 px-15 py-3 m-2">Cancel</a>
-							</div>
-						</form>
+					<form method="POST" action="{{ route('password.email') }}">
+						@csrf
+
+						<div class="form-group mb-10">
+							<input class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8" type="email" placeholder="Email" name="email" required />
+						</div>
+						@error('email')
+						<div class="form-group mb-10">
+							<strong class="text-danger"> {{ $message }} </strong>
+						</div>
+						@enderror
+						@if ($message = Session::get('status'))
+						<div class="form-group mb-10">
+							<strong class="text-success"> {{ $message }} </strong>
+						</div>
+						@endif
+						<div class="form-group">
+							<button type="submit" class="btn btn-pill btn-primary px-15 py-3 m-2">Request</button>
+							<a href="/login" class="btn btn-pill btn-outline-white px-15 py-3 m-2">Cancel</a>
+						</div>
+					</form>
+
 
 
 				</div>

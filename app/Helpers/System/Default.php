@@ -1,10 +1,11 @@
 <?php
 
-use App\Access;
+use App\Permission;
+use App\Role;
 use Spatie\Activitylog\Models\Activity;
 
-function Accesses() {
-  $items = Access::orderBy('name','asc')->pluck('name', 'id')->toArray();
+function Roles() {
+  $items = Role::orderBy('name','asc')->pluck('name', 'id')->toArray();
   return $items;
 }
 
@@ -13,9 +14,9 @@ function activities($model) {
   return $items;
 }
 
-function access($name) {
-  if ( Auth::User()->accesses->name == $name ) {
-    $items = Access::where('name', Auth::User()->accesses->name )->first();
+function permission($name) {
+  if ( Auth::User()->roles->permissions->name == $name ) {
+    $items = Permission::where('name', Auth::User()->roles->permissions->name )->first();
     return $items;
   }
 }

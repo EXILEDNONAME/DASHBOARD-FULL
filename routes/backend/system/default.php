@@ -1,18 +1,33 @@
 <?php
 
-// MANAGEMENT ACCESSES
+// MANAGEMENT PERMISSIONS
 Route::group([
-  'as' => 'system.management.access.',
-  'prefix' => 'dashboard/management/accesses',
+  'as' => 'system.management.permission.',
+  'prefix' => 'dashboard/management/permissions',
   'namespace' => 'Backend\System\Management',
 ], function(){
-  Route::get('datatables', 'AccessController@data')->name('datatables');
-  Route::get('enable/{id}', 'AccessController@enable')->name('enable');
-  Route::get('disable/{id}', 'AccessController@disable')->name('disable');
-  Route::get('status/{id}/{slug}', 'AccessController@status')->name('status');
-  Route::get('delete/{id}', 'AccessController@delete')->name('delete');
-  Route::get('deleteall', 'AccessController@deleteall')->name('deleteall');
-  Route::resource('/', 'AccessController')->parameters(['' => 'id']);
+  Route::get('datatables', 'PermissionController@data')->name('datatables');
+  Route::get('enable/{id}', 'PermissionController@enable')->name('enable');
+  Route::get('disable/{id}', 'PermissionController@disable')->name('disable');
+  Route::get('status/{id}/{slug}', 'PermissionController@status')->name('status');
+  Route::get('delete/{id}', 'PermissionController@delete')->name('delete');
+  Route::get('deleteall', 'PermissionController@deleteall')->name('deleteall');
+  Route::resource('/', 'PermissionController')->parameters(['' => 'id']);
+});
+
+// MANAGEMENT ROLES
+Route::group([
+  'as' => 'system.management.role.',
+  'prefix' => 'dashboard/management/roles',
+  'namespace' => 'Backend\System\Management',
+], function(){
+  Route::get('datatables', 'RoleController@data')->name('datatables');
+  Route::get('enable/{id}', 'RoleController@enable')->name('enable');
+  Route::get('disable/{id}', 'RoleController@disable')->name('disable');
+  Route::get('status/{id}/{slug}', 'RoleController@status')->name('status');
+  Route::get('delete/{id}', 'RoleController@delete')->name('delete');
+  Route::get('deleteall', 'RoleController@deleteall')->name('deleteall');
+  Route::resource('/', 'RoleController')->parameters(['' => 'id']);
 });
 
 // MANAGEMENT USERS

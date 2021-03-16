@@ -14,7 +14,7 @@
 
       @include('includes.sidebar-item')
 
-      @if (access('Administrator'))
+      @if (permission('Administrator'))
       <li class="menu-section">
         <h4 class="menu-text"> Extensions </h4>
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
@@ -36,29 +36,29 @@
 
       <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/management*')) ? 'menu-item-active menu-item-open' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
         <a href="javascript:;" class="menu-link menu-toggle">
-          <span class="menu-icon">
-            <i class="menu-icon fas fa-shield-alt"></i>
-          </span>
+          <span class="menu-icon"><i class="menu-icon fas fa-shield-alt"></i></span>
           <span class="menu-text"> Managements </span>
           <i class="menu-arrow"></i>
         </a>
         <div class="menu-submenu">
           <i class="menu-arrow"></i>
           <ul class="menu-subnav">
-            <li class="menu-item {{ (request()->is('dashboard/management/accesses*')) ? 'menu-item-active' : '' }}">
-              <a href="/dashboard/management/accesses" class="menu-link">
-                <i class="menu-bullet menu-bullet-dot">
-                  <span></span>
-                </i>
-                <span class="menu-text"> Accesses </span>
+            <li class="menu-item {{ (request()->is('dashboard/management/permissions*')) ? 'menu-item-active' : '' }}">
+              <a href="/dashboard/management/permissions" class="menu-link">
+                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                <span class="menu-text"> Permissions </span>
+              </a>
+            </li>
+            <li class="menu-item {{ (request()->is('dashboard/management/roles*')) ? 'menu-item-active' : '' }}">
+              <a href="/dashboard/management/roles" class="menu-link">
+                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                <span class="menu-text"> Roles </span>
               </a>
             </li>
             <li class="menu-item {{ (request()->is('dashboard/management/users*')) ? 'menu-item-active' : '' }}">
               <a href="/dashboard/management/users" class="menu-link">
-                <i class="menu-bullet menu-bullet-dot">
-                  <span></span>
-                </i>
-                <span class="menu-text"> Users</span>
+                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                <span class="menu-text"> Users </span>
               </a>
             </li>
           </ul>
@@ -85,7 +85,7 @@
         </a>
       </li>
 
-      <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/management*')) ? 'menu-item-active menu-item-open' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+      <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/styles*')) ? 'menu-item-active menu-item-open' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
         <a href="javascript:;" class="menu-link menu-toggle">
           <span class="menu-icon">
             <i class="menu-icon fas fa-broom"></i>

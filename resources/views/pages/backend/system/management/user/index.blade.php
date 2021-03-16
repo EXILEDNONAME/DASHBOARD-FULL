@@ -10,7 +10,7 @@
 @endpush
 
 @push('content-body')
-{ data: 'accesses.name' },
+{ data: 'roles.name' },
 { data: 'name' },
 { data: 'username' },
 { data: 'email' },

@@ -11,7 +11,6 @@
     <div class="alert alert-custom alert-white alert-shadow fade show gutter-b" role="alert">
       <div class="alert-icon">
         <span class="svg-icon svg-icon-success">
-          <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg-->
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
               <rect x="0" y="0" width="24" height="24"></rect>
@@ -19,12 +18,11 @@
               <path d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z" fill="#000000" opacity="0.3"></path>
             </g>
           </svg>
-          <!--end::Svg Icon-->
         </span>
       </div>
       <div class="alert-text">
-        Welcome {{ Auth::User()->name }}, <br>
-        <span class="text-muted"> Application Version 1.0.0 </span>
+        <span class="font-weight-bold"> Hi, {{ Auth::User()->name }} </span><br>
+        <span class="text-muted"> App Version 1.0.0 </span>
       </div>
     </div>
   </div>
@@ -64,7 +62,28 @@
         </span>
       </div>
       <div class="alert-text">
-        <span class="font-weight-bold"> Total Accesses </span><br> {{ DB::table('accesses')->get()->count()}} Accesses
+        <span class="font-weight-bold"> Total Roles </span><br> {{ DB::table('roles')->get()->count()}} Roles
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="alert alert-custom alert-white alert-shadow fade show gutter-b" role="alert">
+      <div class="alert-icon">
+        <span class="svg-icon svg-icon-primary svg-icon-2x">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <mask fill="white">
+                <use xlink:href="#path-1"/>
+              </mask>
+              <g/>
+              <path d="M15.6274517,4.55882251 L14.4693753,6.2959371 C13.9280401,5.51296885 13.0239252,5 12,5 C10.3431458,5 9,6.34314575 9,8 L9,10 L14,10 L17,10 L18,10 C19.1045695,10 20,10.8954305 20,12 L20,18 C20,19.1045695 19.1045695,20 18,20 L6,20 C4.8954305,20 4,19.1045695 4,18 L4,12 C4,10.8954305 4.8954305,10 6,10 L7,10 L7,8 C7,5.23857625 9.23857625,3 12,3 C13.4280904,3 14.7163444,3.59871093 15.6274517,4.55882251 Z" fill="#000000"/>
+            </g>
+          </svg>
+        </span>
+      </div>
+      <div class="alert-text">
+        <span class="font-weight-bold"> Total Permissions </span><br> {{ DB::table('permissions')->get()->count()}} Permissions
       </div>
     </div>
   </div>

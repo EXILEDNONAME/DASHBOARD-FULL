@@ -24,7 +24,7 @@
       </div>
         <span class="text-center rounded-top mb-5 mt-5">
           <span class="text-white font-weight-bold">{{ Auth::User()->name }}</span><br>
-          <span class="text-muted text-center">{{ Auth::User()->accesses->name }}</span><br>
+          <span class="text-muted text-center">{{ Auth::User()->roles->name }}</span><br>
         </span>
       </div>
 
@@ -58,13 +58,13 @@
           <i class="symbol-badge symbol-badge-bottom bg-success"></i>
         </div><br>
         <a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ Auth::User()->name }}</a>
-        <div class="text-muted mt-1">{{ Auth::User()->accesses->name }}</div>
+        <div class="text-muted mt-1">{{ Auth::User()->roles->name }}</div>
       </center>
       <div class="d-flex align-items-center mt-5">
 
         <div class="d-flex flex-column">
           <a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ Auth::User()->name }}</a>
-          <div class="text-muted mt-1">{{ Auth::User()->accesses->name }}</div>
+          <div class="text-muted mt-1">{{ Auth::User()->roles->name }}</div>
           <div class="navi mt-2">
             <a href="#" class="navi-item">
               <span class="navi-link p-0 pb-2">

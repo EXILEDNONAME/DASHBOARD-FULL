@@ -1,10 +1,10 @@
 <div class="kt-section__body">
 
   <div class="form-group row">
-    <label class="col-lg-3 col-form-label"> Access </label>
+    <label class="col-lg-3 col-form-label"> Role </label>
     <div class="col-lg-9">
-      {!! Form::select('id_access', accesses(), (isset($data->id_access) ? $data->id_access : NULL), ['placeholder' => '- Pilih Access -', 'class' => 'form-control', 'required' => 'required']) !!}
-      @error('id_access') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
+      {!! Form::select('id_role', roles(), (isset($data->id_role) ? $data->id_role : NULL), ['placeholder' => '- Select Role -', 'class' => 'form-control', 'required' => 'required']) !!}
+      @error('id_role') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
     </div>
   </div>
 

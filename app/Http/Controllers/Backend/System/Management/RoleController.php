@@ -9,9 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\Activitylog\Models\Activity;
 
-Use App\Access;
-
-class AccessController extends Controller {
+class RoleController extends Controller {
 
   /**
   **************************************************
@@ -22,9 +20,9 @@ class AccessController extends Controller {
 
   public function __construct() {
     $this->middleware('auth');
-    $this->url = '/dashboard/management/accesses';
-    $this->path = 'pages.backend.system.management.access';
-    $this->model = 'App\Access';
+    $this->url = '/dashboard/management/roles';
+    $this->path = 'pages.backend.system.management.role';
+    $this->model = 'App\Role';
   }
 
   /**

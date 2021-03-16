@@ -64,7 +64,7 @@
         </span>
       </div>
       <div class="alert-text">
-        <span class="font-weight-bold"> Total Users </span><br> {{ DB::table('accesses')->get()->count()}} Accesses
+        <span class="font-weight-bold"> Total Accesses </span><br> {{ DB::table('accesses')->get()->count()}} Accesses
       </div>
     </div>
   </div>

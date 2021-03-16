@@ -7,10 +7,6 @@ php artisan crud:generate DummyTables --fields='title#string; title_test#string;
 
 <br>
 
+- Update Users, Roles & Permissions
 - Create Email Forgot Password <br>
 - Template Login & Forgot Password
-
-
-Access :
-- Administrator
-- Author

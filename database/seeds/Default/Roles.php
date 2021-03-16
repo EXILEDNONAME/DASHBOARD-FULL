@@ -3,28 +3,31 @@
 use Carbon\Carbon as Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use App\Access;
+use App\Role;
 
-class Accesses extends Seeder
+class Roles extends Seeder
 {
 
   public function run()
   {
     $data = [
       [
+        'id_permission'     => '1',
         'name'              => 'Administrator',
         'created_at'        => Carbon::now(),
       ],
       [
+        'id_permission'     => '2',
         'name'              => 'Operator',
         'created_at'        => Carbon::now(),
       ],
       [
+        'id_permission'     => '3',
         'name'              => 'User',
         'created_at'        => Carbon::now(),
       ],
     ];
 
-    Access::insert($data);
+    Role::insert($data);
   }
 }

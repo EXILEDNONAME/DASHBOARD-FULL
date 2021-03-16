@@ -2,17 +2,11 @@
 
 use Illuminate\Database\Seeder;
 
-class DefaultSeeder extends Seeder
-{
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
-    public function run()
-    {
-        $this->call(Accesses::class);
-        $this->call(Users::class);
-        $this->call(Dummies::class);
-    }
+class DefaultSeeder extends Seeder {
+  public function run() {
+    $this->call(Permissions::class);
+    $this->call(Roles::class);
+    $this->call(Users::class);
+    $this->call(Dummies::class);
+  }
 }

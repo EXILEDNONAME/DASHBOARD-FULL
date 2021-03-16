@@ -14,7 +14,7 @@ class Users extends Seeder
   {
     $users = [
       [
-        'id_access'         => '1',
+        'id_role'           => '1',
         'name'              => 'Administrator',
         'username'          => 'admin',
         'phone'             => '08112448111',
@@ -24,7 +24,7 @@ class Users extends Seeder
         'created_at'        => Carbon::now(),
       ],
       [
-        'id_access'         => '2',
+        'id_role'           => '2',
         'name'              => 'Operator',
         'username'          => 'operator',
         'phone'             => '08112448112',
@@ -34,7 +34,7 @@ class Users extends Seeder
         'created_at'        => Carbon::now(),
       ],
       [
-        'id_access'         => '3',
+        'id_role'           => '3',
         'name'              => 'User',
         'username'          => 'user',
         'phone'             => '08112448113',

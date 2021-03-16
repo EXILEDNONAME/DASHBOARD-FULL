@@ -71,10 +71,17 @@
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
       </li>
 
-      <li class="menu-item {{ (request()->is('dashboard/profile*')) ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+      <li class="menu-item {{ (request()->is('dashboard/general*')) ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
         <a href="/dashboard/profile" class="menu-link">
           <span class="menu-icon"><i class="menu-icon flaticon2-gear"></i></span>
           <span class="menu-text"> General </span>
+        </a>
+      </li>
+
+      <li class="menu-item {{ (request()->is('dashboard/posts*')) ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+        <a href="/dashboard/profile" class="menu-link">
+          <span class="menu-icon"><i class="menu-icon fab fa-microsoft"></i></span>
+          <span class="menu-text"> Posts </span>
         </a>
       </li>
 

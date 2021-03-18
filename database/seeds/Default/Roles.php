@@ -12,17 +12,17 @@ class Roles extends Seeder
   {
     $data = [
       [
-        'id_permission'     => '1',
+        'id_access'         => '1',
         'name'              => 'Administrator',
         'created_at'        => Carbon::now(),
       ],
       [
-        'id_permission'     => '2',
+        'id_access'         => '2',
         'name'              => 'Operator',
         'created_at'        => Carbon::now(),
       ],
       [
-        'id_permission'     => '3',
+        'id_access'         => '3',
         'name'              => 'User',
         'created_at'        => Carbon::now(),
       ],

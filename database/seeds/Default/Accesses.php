@@ -3,9 +3,9 @@
 use Carbon\Carbon as Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use App\Permission;
+use App\Access;
 
-class Permissions extends Seeder
+class Accesses extends Seeder
 {
 
   public function run()
@@ -25,6 +25,6 @@ class Permissions extends Seeder
       ],
     ];
 
-    Permission::insert($data);
+    Access::insert($data);
   }
 }

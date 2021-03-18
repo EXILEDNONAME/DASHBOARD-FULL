@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
-use App\Permission;
+use App\Access;
 
 class Role extends Model {
 
@@ -16,8 +16,8 @@ class Role extends Model {
 
   protected static $logAttributes = ['*'];
 
-  public function permissions(){
-    return $this->belongsTo(Permission::class, 'id_permission');
+  public function accesses(){
+    return $this->belongsTo(Access::class, 'id_access');
   }
 
 }

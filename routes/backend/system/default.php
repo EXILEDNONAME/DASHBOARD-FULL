@@ -1,18 +1,18 @@
 <?php
 
-// MANAGEMENT PERMISSIONS
+// MANAGEMENT ACCESSES
 Route::group([
-  'as' => 'system.management.permission.',
-  'prefix' => 'dashboard/management/permissions',
+  'as' => 'system.management.test.',
+  'prefix' => 'dashboard/management/tests',
   'namespace' => 'Backend\System\Management',
 ], function(){
-  Route::get('datatables', 'PermissionController@data')->name('datatables');
-  Route::get('enable/{id}', 'PermissionController@enable')->name('enable');
-  Route::get('disable/{id}', 'PermissionController@disable')->name('disable');
-  Route::get('status/{id}/{slug}', 'PermissionController@status')->name('status');
-  Route::get('delete/{id}', 'PermissionController@delete')->name('delete');
-  Route::get('deleteall', 'PermissionController@deleteall')->name('deleteall');
-  Route::resource('/', 'PermissionController')->parameters(['' => 'id']);
+  Route::get('datatables', 'TestController@data')->name('datatables');
+  Route::get('enable/{id}', 'TestController@enable')->name('enable');
+  Route::get('disable/{id}', 'TestController@disable')->name('disable');
+  Route::get('status/{id}/{slug}', 'TestController@status')->name('status');
+  Route::get('delete/{id}', 'TestController@delete')->name('delete');
+  Route::get('deleteall', 'TestController@deleteall')->name('deleteall');
+  Route::resource('/', 'TestController')->parameters(['' => 'id']);
 });
 
 // MANAGEMENT ROLES

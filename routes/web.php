@@ -2,8 +2,8 @@
 
 Auth::routes();
 
-Route::get('/', function () { return view('pages.frontend.index'); });
-Route::get('/home', function () { return view('pages.frontend.home'); });
+Route::view('/', 'pages.frontend.index');
+Route::view('/home', 'pages.frontend.home');
 
 // LANGUAGE
 Route::get('lang/{language}', 'LocalizationController@switch')->name('localization.switch');

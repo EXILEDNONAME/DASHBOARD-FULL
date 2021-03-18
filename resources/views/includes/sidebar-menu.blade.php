@@ -14,7 +14,7 @@
 
       @include('includes.sidebar-item')
 
-      @if (permission('Administrator'))
+      @if (access('Administrator'))
       <li class="menu-section">
         <h4 class="menu-text"> Extensions </h4>
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
@@ -43,10 +43,10 @@
         <div class="menu-submenu">
           <i class="menu-arrow"></i>
           <ul class="menu-subnav">
-            <li class="menu-item {{ (request()->is('dashboard/management/permissions*')) ? 'menu-item-active' : '' }}">
-              <a href="/dashboard/management/permissions" class="menu-link">
+            <li class="menu-item {{ (request()->is('dashboard/management/accesses*')) ? 'menu-item-active' : '' }}">
+              <a href="/dashboard/management/accesses" class="menu-link">
                 <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                <span class="menu-text"> Permissions </span>
+                <span class="menu-text"> Accesses </span>
               </a>
             </li>
             <li class="menu-item {{ (request()->is('dashboard/management/roles*')) ? 'menu-item-active' : '' }}">

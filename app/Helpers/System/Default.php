@@ -1,6 +1,6 @@
 <?php
 
-use App\Permission;
+use App\Access;
 use App\Role;
 use Spatie\Activitylog\Models\Activity;
 
@@ -14,9 +14,9 @@ function activities($model) {
   return $items;
 }
 
-function permission($name) {
-  if ( Auth::User()->roles->permissions->name == $name ) {
-    $items = Permission::where('name', Auth::User()->roles->permissions->name )->first();
+function access($name) {
+  if ( Auth::User()->roles->accesses->name == $name ) {
+    $items = Access::where('name', Auth::User()->roles->accesses->name )->first();
     return $items;
   }
 }

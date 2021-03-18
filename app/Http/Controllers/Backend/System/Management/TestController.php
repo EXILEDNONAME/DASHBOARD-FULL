@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\Activitylog\Models\Activity;
 
-class PermissionController extends Controller {
+class TestController extends Controller {
 
   /**
   **************************************************
@@ -20,9 +20,9 @@ class PermissionController extends Controller {
 
   public function __construct() {
     $this->middleware('auth');
-    $this->url = '/dashboard/management/permissions';
-    $this->path = 'pages.backend.system.management.permission';
-    $this->model = 'App\Permission';
+    $this->url = '/dashboard/management/accesses';
+    $this->path = 'pages.backend.system.management.access';
+    $this->model = 'App\Access';
   }
 
   /**

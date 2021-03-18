@@ -16,7 +16,7 @@
           <a id="file-refresh" class="btn btn-sm btn-icon btn-clean btn-icon-md" data-toggle="kt-tooltip" title="" data-original-title="Refresh"><i class="la la-refresh"></i></a>
           <div class="dropdown dropdown-inline">
             <button type="button" class="btn btn-clean btn-sm btn-icon btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-level-down-alt"></i>
+              <i class="fa fa-angle-down"></i>
             </button>
             <div class="dropdown-menu dropdown-menu-right">
               <ul class="navi navi-hover py-5">

@@ -1,5 +1,5 @@
 @extends('layouts.pages.edit', ['header' => 'true'])
-@push('title', 'Management Permissions')
+@push('title', 'Management Accesses')
 
 @push('content-body')
 <form method="POST" action="{{ URL::current() }}/../../{{ $data->id }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">

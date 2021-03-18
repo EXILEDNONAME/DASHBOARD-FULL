@@ -5,6 +5,10 @@
 <div class="table-responsive">
   <table width="100%" class="table table-stiped table-bordered">
     <tr>
+      <td class="align-middle font-weight-bold"> Role </td>
+      <td class="align-middle"> {{ $data->roles->name }} </td>
+    </tr>
+    <tr>
       <td class="align-middle font-weight-bold"> Username </td>
       <td class="align-middle"> {{ $data->username }} </td>
     </tr>
@@ -31,5 +35,4 @@
     @include('includes.datatable.page-show.main')
   </table>
 </div>
-<hr>
 @endpush

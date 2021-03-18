@@ -33,7 +33,7 @@ class RoleController extends Controller {
 
   public function index() {
     $model = $this->model;
-    $data = $this->model::select('*');
+    $data = $this->model::with(['accesses'])->select('roles.*');
     if(request()->ajax()) {
       return DataTables::of($data)
       ->addColumn('checkbox', 'includes.datatable.checkbox')

@@ -5,8 +5,22 @@
 Command :
 php artisan crud:generate DummyTables --fields='title#string; title_test#string; description#text;'
 
-<br>
+# DASHBOARD Revision
 
-- Update Users, Roles & Permissions
-- Create Email Forgot Password <br>
-- Template Login & Forgot Password
+- Layout Index, Show, Report
+  -- INDEX :
+      -- Edit Datatable Checkbox (Bulk Action)
+  -- SHOW :
+      -- Single Activity Item
+      -- Single Export Data
+      -- QRCode / Barcode Generate Page
+  -- REPORT :
+      -- Filter Range Date
+      -- Print
+  -- CREATE
+      -- Validate Request Ajax
+
+- Edit Page Profile
+- Monitoring Device
+- Messages
+- Generator

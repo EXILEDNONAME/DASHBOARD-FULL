@@ -1,5 +1,5 @@
 @extends('layouts.pages.index', ['header' => 'true'])
-@push('title', 'Management Permissions')
+@push('title', 'Management Accesses')
 
 @push('content-head')
 <th> Name </th>

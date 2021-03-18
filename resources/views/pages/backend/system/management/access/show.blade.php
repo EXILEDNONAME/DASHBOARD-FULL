@@ -1,5 +1,5 @@
 @extends('layouts.pages.show', ['header' => 'true'])
-@push('title', 'Management Permissions')
+@push('title', 'Management Accesses')
 
 @push('content-body')
 <div class="table-responsive">
@@ -15,5 +15,4 @@
     @include('includes.datatable.page-show.main')
   </table>
 </div>
-<hr>
 @endpush

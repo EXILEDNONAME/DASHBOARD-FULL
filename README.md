@@ -6,6 +6,7 @@ Command :
 php artisan crud:generate DummyTables --fields='title#string; title_test#string; description#text;'
 
 # DASHBOARD Revision
+- Layout Dashboard Page Title
 
 - Layout Index, Show, Report
   -- INDEX :

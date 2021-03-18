@@ -14,6 +14,48 @@
 
       @include('includes.sidebar-item')
 
+      <li class="menu-section">
+        <h4 class="menu-text"> Frontend </h4>
+        <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
+      </li>
+
+      <li class="menu-item {{ (request()->is('dashboard/general*')) ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+        <a href="/dashboard/profile" class="menu-link">
+          <span class="menu-icon"><i class="menu-icon flaticon2-gear"></i></span>
+          <span class="menu-text"> General </span>
+        </a>
+      </li>
+
+      <li class="menu-item {{ (request()->is('dashboard/posts*')) ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+        <a href="/dashboard/profile" class="menu-link">
+          <span class="menu-icon"><i class="menu-icon fab fa-microsoft"></i></span>
+          <span class="menu-text"> Posts </span>
+        </a>
+      </li>
+
+      <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/styles*')) ? 'menu-item-active menu-item-open' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+        <a href="javascript:;" class="menu-link menu-toggle">
+          <span class="menu-icon">
+            <i class="menu-icon fas fa-broom"></i>
+          </span>
+          <span class="menu-text"> Styles </span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="menu-submenu">
+          <i class="menu-arrow"></i>
+          <ul class="menu-subnav">
+            <li class="menu-item {{ (request()->is('dashboard/management/accesses*')) ? 'menu-item-active' : '' }}">
+              <a href="/dashboard/management/accesses" class="menu-link">
+                <i class="menu-bullet menu-bullet-dot">
+                  <span></span>
+                </i>
+                <span class="menu-text"> Menus </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
       @if (access('Administrator'))
       <li class="menu-section">
         <h4 class="menu-text"> Extensions </h4>
@@ -65,48 +107,6 @@
         </div>
       </li>
       @endif
-
-      <li class="menu-section">
-        <h4 class="menu-text"> Frontend </h4>
-        <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
-      </li>
-
-      <li class="menu-item {{ (request()->is('dashboard/general*')) ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
-        <a href="/dashboard/profile" class="menu-link">
-          <span class="menu-icon"><i class="menu-icon flaticon2-gear"></i></span>
-          <span class="menu-text"> General </span>
-        </a>
-      </li>
-
-      <li class="menu-item {{ (request()->is('dashboard/posts*')) ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
-        <a href="/dashboard/profile" class="menu-link">
-          <span class="menu-icon"><i class="menu-icon fab fa-microsoft"></i></span>
-          <span class="menu-text"> Posts </span>
-        </a>
-      </li>
-
-      <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/styles*')) ? 'menu-item-active menu-item-open' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
-        <a href="javascript:;" class="menu-link menu-toggle">
-          <span class="menu-icon">
-            <i class="menu-icon fas fa-broom"></i>
-          </span>
-          <span class="menu-text"> Styles </span>
-          <i class="menu-arrow"></i>
-        </a>
-        <div class="menu-submenu">
-          <i class="menu-arrow"></i>
-          <ul class="menu-subnav">
-            <li class="menu-item {{ (request()->is('dashboard/management/accesses*')) ? 'menu-item-active' : '' }}">
-              <a href="/dashboard/management/accesses" class="menu-link">
-                <i class="menu-bullet menu-bullet-dot">
-                  <span></span>
-                </i>
-                <span class="menu-text"> Menus </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </li>
 
       <li class="menu-section">
         <h4 class="menu-text"> Settings </h4>
